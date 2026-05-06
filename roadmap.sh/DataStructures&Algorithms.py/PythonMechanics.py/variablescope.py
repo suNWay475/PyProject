@@ -1,5 +1,5 @@
 x = 'global'
-
+print(x)
 def outer():
     x = 'enclosing'
 

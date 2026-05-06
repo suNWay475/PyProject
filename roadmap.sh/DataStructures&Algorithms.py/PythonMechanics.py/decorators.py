@@ -1,18 +1,18 @@
-# from functools import wraps
+from functools import wraps
+#Example 1
+def decorator(func):
+    def wrapper(a, b): # приймає всі аргументи які ми задамо
+        return func(a, b)
+    return wrapper
 
-# def decorator(func):
-#     @wraps(func)  # запамятай своє ім'я
-#     def wrapper(*args, **kwargs): # приймає всі аргументи які ми задамо
-#         return func(*args, **kwargs)
-#     return wrapper
+@decorator #або decorator(add)
+def add(a, b):
+    sumed = a + b
+    print(sumed)
 
-# @decorator #або decorator(add)
-# def add(a, b):
-#     return a + b
+decorator(add(2,3))
 
-# print(add.__name__)  # add  ✅ — ім'я збереглось!
-
-
+#Example 2
 
 def pretty_sumab(func):    # приймає функцію sumab
     def inner(a, b):       # обгортка з тими ж аргументами
