@@ -8,7 +8,11 @@
 # ^ початок рядка, ^Hello
 # $ кінець рядка, world$
 
+import re
 
+text = 'Мій номер 0991234567'
+result = re.search(r'\d+', text)
+print(result.group())  # '0991234567'
 
 
 
